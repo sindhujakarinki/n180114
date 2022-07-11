@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<head>
+    <title>form ass</title>
+    <style>
+        
+        .heading{
+            margin-bottom: 30px;
+            top: 0px;
+            right: 0px;
+            /* background-color: rgb(68, 128, 219); */
+            height: 50px;
+            background-color:skyblue;
+            border-radius: 50%; 
+            /* /* left: 10px;
+            position: absolute; */
+            
+        } 
+        #head{
+            width:200px;
+            margin-left: 25%;
+            border-radius: 5px;
+            display: flex;
+            border: 1px solid black;
+            background-color: blue;
+        }
+    
+        h1{
+            text-decoration: underline;
+            margin-left: 30px;
+        }
+        h5{
+            margin-top: 38px;
+        }
+        .heading:hover{
+            color: yellow;
+            background-color: green;
+        }
+        .form{
+            height: 630px;
+            width: 500px;
+            top:0px;
+            border: 2px solid black;
+            padding: 20px;
+            position: absolute;
+            left: 35%;
+            background-color: antiquewhite;
+        }
+        .table{
+            padding: 30px;
+        }
+
+        #slider {
+            position: absolute;
+            width: 1348px;
+            height: 700px;
+
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            }
+            #slider ul {
+            position: relative;
+            list-style: none;
+            height: 100%;
+            width: 10000%;
+            padding: 0;
+            margin: 0;
+            transition: all 750ms ease;
+            
+            }
+            #slider ul li {
+            position: relative;
+            height: 100%;
+
+            
+            }
+            #slider ul li img{
+            top:0px;
+            position: absolute;
+            width: 1340px;
+            height: 670px;
+            left: 0px;
+            }
+            #slider #prev, #slider #next {
+            width: 50px;
+            line-height: 50px;
+            text-align: center;
+            color: black;
+            text-decoration: none;
+            position: absolute;
+            top: 50%;
+            border-radius: 50%;
+            font-size: 2rem;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            transform: translateY(-50%);
+            transition: all 150ms ease;
+            }
+            #slider #prev {
+            left: 10px;
+            }
+            #slider #next {
+            right:0px;
+            }
+
+            #slider #prev:hover, #slider #next:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+            text-shadow: 0;
+            }
+            input[type='submit']{
+                border: none;
+                border-radius: 5px;
+                background-color: white;
+                height: 25px;
+                width: 80px;  
+                color: navy;
+            }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <div id="head"  ><h1 id="h1">F1H20</h1><h5 id="h1" style="color:red;">rgukt</h5></div>
+        <form action="form.php" method="post" onsubmit="return validate()">
+        <table class="table">
+            <tr>
+            <td><label  >USERNAME</label></td>
+            <td><input type="text" id="user" ></td>
+            </tr>
+            <tr>
+                <td><label>G-mail</label></td>
+                <td><input type="text" id="email"></td>
+            </tr>
+            <tr>
+                <td><label>Phonenumber</label></td>
+                <td><input type="text" id="phno"></td>
+
+            </tr>
+            <tr> <td><label>COUNTRY</label></td>
+                <td>
+                    <select id="country">
+                        <option>INDIA</option>
+                        <option>AMERICA</option>
+                        <option>ENGLAND</option>
+                        <option>GERMANY</option>
+                    </select>
+                    </td></tr>
+            <tr><br>
+                <td><label>fee-paymenet</label>
+                </td>
+                <td><input type="radio" value="r1" name="r1"id="dd">DD number<input type="radio" id="ac" name="r1" value="r2">Account number<input type="text "id="account"> </td>
+            </tr>
+            <tr>
+                
+                <td><label>Accomodation</label></td>
+                <td>
+                    
+                    NUZVID <input type="radio" name="r2" id="nuz">
+                    KADAPA<input type="radio" name="r2" id="rkv">
+                    SKLM<input type="radio" name="r2"id="sklm">
+                ONGOLE<input type="radio" name="r2"id="ong"></td>             
+                
+            </tr>
+            <tr>
+                <td><label>Food</label></td>
+                <td>
+                    Breakfast<input type="checkbox" id="bf">
+                    Lunch<input type="checkbox" id="ln">
+                    Snacks<input type="checkbox" id="sn">
+                    Tea<input type="checkbox" id="T">
+                    Cofee<input type="checkbox" id="cfe">
+                eggs<input type="checkbox" id="egg"></td>
+            </tr>
+            <tr>
+                <td>ENTER NO OF DAYS TO STAY</td>
+                <td><input type="text" id="days"></td>
+            </tr>
+            <tr>
+                <td ><input type="submit" value="submit" id="submit"></td>
+            </tr>
+
+
+
+
+
+
+            
+            </table>
+        </form>
+            </div>
+            <script>
+                let i=0;
+                function change(){
+                    var images = ["images/avengers-endgame-mstiteli-final-terpily-tanosa-toni-stark-zh.jpg", "images/brie-larson-as-carol-danvers-in-captain-marvel-cx.jpg", "images/Captain-Marvel-1.png", "images/Tony-Stark-Iron-Man-with-Infinity-Stones-in-Avengers-Endgame.jpg"];
+                    document.body.setAttribute('style','background-image:url('+images[i]+')');
+
+                    i=(i+1)%images.length;
+                }
+                setInterval(change,1000);
+                var head=document.getElementById('head')
+                function heading(){
+                    head.style.backgroundColor='green';
+                    document.getElementById('h1').style.color='yellow';
+                }
+                function remove(){
+                    document.getElementById('head').style.backgroundColor='blue';
+                    document.getElementById('h1').style.color='white';
+                    
+                }
+                head.addEventListener('mouseover',heading)
+                head.addEventListener('mouseout',remove)
+                var user=document.getElementById("user");
+                var email=document.getElementById("email");
+                var phno=document.getElementById("phno");
+                var country=document.getElementById("country");
+                var dd=document.getElementById("dd");
+                var ac=document.getElementById("ac");
+                var fee=document.getElementById("account");
+                var nuz=document.getElementById('nuz');
+                var ong=document.getElementById('ong');
+                var rkv=document.getElementById('rkv');
+                var sklm=document.getElementById('sklm');
+                var day=document.getElementById('days');
+                var userpattern=/^[F][a-zA-Z]+$/
+                var emailpattern=/^[a-zA-Z]+[A-Za-z0-9]*@[a-zA-Z]+\.([a-zA-Z]\.)*(com||in||net||edu)+$/
+                var indpattern=/^977\d{7}$/
+                var uspattern=/\d{4}-\d{7}-d{4}/
+                var ddpattern=/^(SBIN||sbin)\d{7}$/
+                var acpattern=/\d{11}/
+                var amount=0
+function validate(){
+
+    var name=user.value.toUpperCase();
+    if(userpattern.test(name)==false || name.length<4){
+        console.log(nuz.checked)
+        user.style.border='1px solid red';
+        return false;
+    }
+    if(name.length>10){
+        user.style.border='1px solid red';
+        return false;
+    }
+    if(emailpattern.test(email.value)==false){
+        email.style.border='1px solid red';
+        return false;
+    }
+    else{
+        email.style.border='1px solid black';
+    }           
+    if(indpattern.test(phno.value)==false && uspattern.test(phno.value)==false){
+        phno.style.border='1px solid red';
+        return false;
+    }
+    if(dd.checked){
+        if(ddpattern.test(fee.value)==false){
+            fee.style.border='1px solid red';
+            return false;
+        }
+    }
+    if(ac.checked){
+            if(acpattern.test(fee.value)==false){
+            fee.style.border='1px solid red';
+            return false;
+        }
+    }
+    
+    if(country.value!='India'){
+                    confirm('would you like to have a beer');
+                }
+                if(nuz.checked==true){
+                    amount=day.value*2000;
+                }
+                if(rkv.checked==true){
+                    amount=(day.value*2000);
+                }
+                if(ong.checked==true){
+                    amount=(day.value*3000);
+                }
+                if(sklm.checked==true){
+                    amount=(day.value*3000);
+                }
+                
+                alert('details\nfee:'+amount);
+                return true;
+}
+
+</script>
+</body>
+</html>          
