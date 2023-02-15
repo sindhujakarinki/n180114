@@ -1,2 +1,2 @@
-# n180114
+# Scolling images
 Simple web page with scrolling images
